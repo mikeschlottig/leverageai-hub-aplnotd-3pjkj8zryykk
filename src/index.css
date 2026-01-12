@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  :root {
+    --background: 222 47% 95%; /* brand-light */
+    --foreground: 222 84% 4.9%;
+    --card: 222 47% 95%;
+    --card-foreground: 222 84% 4.9%;
+    --popover: 222 47% 95%;
+    --popover-foreground: 222 84% 4.9%;
+    --primary: 255 66% 65%; /* brand-purple */
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 172 67% 42%; /* brand-accent */
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+    --brand-purple: 255 66% 65%;
+    --brand-accent: 172 67% 42%;
+  }
+  .dark {
+    --background: 222 47% 11.2%; /* brand-dark */
+    --foreground: 210 40% 98%; /* brand-text */
+    --card: 224 71% 4%; /* brand-darker */
+    --card-foreground: 210 40% 98%;
+    --popover: 224 71% 4%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 255 66% 65%; /* brand-purple */
+    --primary-foreground: 210 40% 98%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%; /* brand-muted */
+    --accent: 172 67% 42%; /* brand-accent */
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --brand-purple: 255 66% 65%;
+    --brand-accent: 172 67% 42%;
+  }
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    text-rendering: optimizeLegibility;
+  }
+}
+@layer components {
+  .btn-gradient {
+    @apply text-primary-foreground bg-gradient-to-r from-slate-900 to-blue-500 dark:from-slate-800 dark:to-blue-400 hover:opacity-90 transition-opacity;
+  }
+  .text-gradient {
+    @apply bg-gradient-to-r from-slate-900 to-blue-500 dark:from-slate-50 dark:to-brand-purple;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .text-gradient-light {
+    @apply bg-gradient-to-r from-white to-brand-accent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .glass {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10 shadow-glass;
+  }
+}
